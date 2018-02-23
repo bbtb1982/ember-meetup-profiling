@@ -1,0 +1,16 @@
+<div class="layout-row layout-xs-column">
+  <div class="layout-column flex-xs flex-gt-xs-50">
+  {{#each model.children as |container|}}
+    {{#box-container}}
+      {{#each container.children as |row index|}}
+        {{#box-row}}
+          {{#each row.children as |item|}}
+            {{box-item item=item
+                       isDynamic=isDynamic}}
+          {{/each}}
+        {{/box-row}}
+      {{/each}}
+    {{/box-container}}
+  {{/each}}
+  </div>
+</div>

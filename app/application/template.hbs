@@ -1,0 +1,17 @@
+<div class="layout-row">
+  <div class="flex-40">
+  {{box-settings  containers=containers
+                  rows=rows
+                  columns=columns
+                  generateMatrix=(action "generateMatrix")
+                  isAsync=isAsync
+                  delay=delay
+                  isDynamic=isDynamic
+
+  }}
+  </div>
+  <div class="flex">
+    {{box-matrix isDynamic=isDynamic
+                 model=model}}
+  </div>
+</div>

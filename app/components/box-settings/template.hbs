@@ -1,0 +1,52 @@
+<div class="layout-row layout-xs-column">
+  <div class="layout-column flex-xs flex-gt-xs-50">
+    {{#paper-card as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}Matix Settings{{/text.headline}}
+          {{#text.subhead}}optnions to control size and number of instances to create on Render{{/text.subhead}}
+        {{/title.text}}
+      {{/card.title}}
+      {{#card.content}}
+        <div class="layout layout-align-center-center slider-container">
+          <span>containes</span>
+          {{paper-slider class="flex" min=1 max=100 value=containers onChange=(action (mut containers))}}
+          {{paper-input type="number" value=containers onChange=(action (mut containers))}}
+        </div>
+
+        <div class="layout layout-align-center-center slider-container">
+          <span>rows</span>
+          {{paper-slider class="flex" min=1 max=100 value=rows onChange=(action (mut rows))}}
+          {{paper-input type="number" value=rows onChange=(action (mut rows))}}
+        </div>
+
+        <div class="layout layout-align-center-center slider-container">
+          <span>columns</span>
+          {{paper-slider class="flex" min=1 max=100 value=columns onChange=(action (mut columns))}}
+          {{paper-input type="number" value=columns onChange=(action (mut columns))}}
+        </div>
+
+        <div class="layout-column">
+          {{#paper-checkbox value=isDynamic onChange=(action "toggleDynamic")}}
+            is Dynamic
+          {{/paper-checkbox}}
+        </div>
+
+        <div class="layout-column">
+          {{#paper-checkbox value=isAsync onChange=(action "toggleAsync")}}
+            is Async
+          {{/paper-checkbox}}
+
+          {{#if isAsync}}
+              <span>delay</span>
+              {{paper-input type="number" value=delay onChange=(action (mut delay))}}
+          {{/if}}
+        </div>
+      {{/card.content}}
+      {{#card.actions}}
+        {{#paper-button primary=true raised=true onClick=(action generateMatrix) }}Render{{/paper-button}}
+      {{/card.actions}}
+    {{/paper-card}}
+  </div>
+</div>
+
