@@ -28,7 +28,7 @@ export default Controller.extend({
     let _cols = cols;
 
     while (_containers--) {
-        console.time(`generateMatrixTask: ${_containers}`);
+      console.time(`generateMatrixTask: ${_containers}`);
 
       yield timeout(delay);
       const _container = { children: [] };

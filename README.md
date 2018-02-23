@@ -1,5 +1,10 @@
 # ember-meetup-profiling
 
+An Exmaple App to designed to help learn browser profiling with Ember.
+Accompaning Presentation
+
+[Profiling Ember](http://slides.com/brandonrichards/profiling-ember-apps#/)
+
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
